@@ -1,0 +1,5 @@
+#+BEGIN_SRC
+$ kubectl apply -f prometheus-pvc.yml
+$ kubectl apply -f prometheus.yml
+$ kubectl apply -f servicemonitor.yml
+#+END_SRC
