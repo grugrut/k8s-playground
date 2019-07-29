@@ -1,5 +1,6 @@
 #+BEGIN_SRC
-$ kubectl apply -f prometheus-pvc.yml
 $ kubectl apply -f prometheus.yml
 $ kubectl apply -f servicemonitor.yml
+$ kubectl apply -f alertmanager.yml
+$ kubectl apply -f node-exporter.yml
 #+END_SRC

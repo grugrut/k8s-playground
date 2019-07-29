@@ -20,4 +20,38 @@ spec:
           - containerPort: 9100
       hostNetwork: true
       hostPID: true
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: node-exporter
+    k8s-app: node-exporter
+  name: node-exporter
+  namespace: my-prometheus
+spec:
+  type: ClusterIP
+  clusterIP: None
+  ports:
+  - name: https
+    port: 9100
+    protocol: TCP
+  selector:
+    app: node-exporter
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: prometheus-node-exporter
+  namespace: my-prometheus
+  labels:
+    k8s-app: node-exporter
+spec:
+  selector:
+    matchLabels:
+      k8s-app: node-exporter
+  endpoints:
+    - port: https
+      interval: 30s
+
         
