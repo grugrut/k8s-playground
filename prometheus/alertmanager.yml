@@ -1,8 +1,0 @@
-apiVersion: monitoring.coreos.com/v1
-kind: Alertmanager
-metadata:
-  name: alertmanager-main
-  namespace: my-prometheus
-spec:
-  replicas: 1
-  securityContext: {}
