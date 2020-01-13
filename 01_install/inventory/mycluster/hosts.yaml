@@ -22,6 +22,7 @@ all:
         master:
     kube-node:
       hosts:
+        master:
         node1:
         node2:
         node3:
