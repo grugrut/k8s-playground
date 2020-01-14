@@ -1,0 +1,6 @@
+* Install
+#+begin_src bash
+cd /path/to/kubespray
+
+ansible-playbook -i inventory/mycluster/hosts.yaml --become --become-user=root -b -v cluster.yml --ask-become-pass
+#+end_src
