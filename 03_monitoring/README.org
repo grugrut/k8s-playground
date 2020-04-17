@@ -1,0 +1,8 @@
+* Monitoring
+
+- Install prometheus operator
+#+begin_src bash
+kubectl apply -f manifests/setup
+kubectl apply -f manifests
+kubectl apply -f grafana.yaml
+#+end_src
