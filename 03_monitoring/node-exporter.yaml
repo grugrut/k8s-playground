@@ -14,23 +14,23 @@ spec:
   privileged: false
   allowPrivilegeEscalation: false
   allowedCapabilities:
-  - '*'
+    - "*"
   volumes:
-  - '*'
+    - "*"
   hostNetwork: true
   hostPorts:
-  - min: 0
-    max: 65535
+    - min: 0
+      max: 65535
   hostIPC: false
   hostPID: true
   runAsUser:
-    rule: 'RunAsAny'
+    rule: "RunAsAny"
   seLinux:
-    rule: 'RunAsAny'
+    rule: "RunAsAny"
   supplementalGroups:
-    rule: 'RunAsAny'
+    rule: "RunAsAny"
   fsGroup:
-    rule: 'RunAsAny'
+    rule: "RunAsAny"
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
@@ -38,14 +38,14 @@ metadata:
   name: node-exporter
   namespace: monitoring
 rules:
-- apiGroups:
-  - policy
-  resources:
-  - podsecuritypolicies
-  resourceNames:
-  - node-exporter
-  verbs:
-  - use
+  - apiGroups:
+      - policy
+    resources:
+      - podsecuritypolicies
+    resourceNames:
+      - node-exporter
+    verbs:
+      - use
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
@@ -60,9 +60,9 @@ roleRef:
   kind: Role
   name: node-exporter
 subjects:
-- kind: ServiceAccount
-  name: node-exporter
-  namespace: monitoring
+  - kind: ServiceAccount
+    name: node-exporter
+    namespace: monitoring
 ---
 apiVersion: apps/v1
 kind: DaemonSet
@@ -84,65 +84,65 @@ spec:
         app.kubernetes.io/version: v0.18.1
     spec:
       containers:
-      - args:
-        - --web.listen-address=127.0.0.1:9100
-        - --path.procfs=/host/proc
-        - --path.sysfs=/host/sys
-        - --path.rootfs=/host/root
-        - --no-collector.wifi
-        - --no-collector.hwmon
-        - --no-collector.timex
-        - --collector.filesystem.ignored-mount-points=^/(dev|proc|sys|var/lib/docker/.+)($|/)
-        - --collector.filesystem.ignored-fs-types=^(autofs|binfmt_misc|cgroup|configfs|debugfs|devpts|devtmpfs|fusectl|hugetlbfs|mqueue|overlay|proc|procfs|pstore|rpc_pipefs|securityfs|sysfs|tracefs)$
-        image: quay.io/prometheus/node-exporter:v0.18.1
-        imagePullPolicy: IfNotPresent
-        name: node-exporter
-        resources:
-          limits:
-            cpu: 250m
-            memory: 180Mi
-          requests:
-            cpu: 102m
-            memory: 180Mi
-        terminationMessagePath: /dev/termination-log
-        terminationMessagePolicy: File
-        volumeMounts:
-        - mountPath: /host/proc
-          name: proc
-        - mountPath: /host/sys
-          name: sys
-        - mountPath: /host/root
-          mountPropagation: HostToContainer
-          name: root
-          readOnly: true
-      - args:
-        - --logtostderr
-        - --secure-listen-address=[$(IP)]:9100
-        - --tls-cipher-suites=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_RSA_WITH_AES_128_CBC_SHA256,TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256,TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256
-        - --upstream=http://127.0.0.1:9100/
-        env:
-        - name: IP
-          valueFrom:
-            fieldRef:
-              apiVersion: v1
-              fieldPath: status.podIP
-        image: quay.io/coreos/kube-rbac-proxy:v0.4.1
-        imagePullPolicy: IfNotPresent
-        name: kube-rbac-proxy
-        ports:
-        - containerPort: 9100
-          hostPort: 9100
-          name: https
-          protocol: TCP
-        resources:
-          limits:
-            cpu: 20m
-            memory: 40Mi
-          requests:
-            cpu: 10m
-            memory: 20Mi
-        terminationMessagePath: /dev/termination-log
-        terminationMessagePolicy: File
+        - args:
+            - --web.listen-address=127.0.0.1:9100
+            - --path.procfs=/host/proc
+            - --path.sysfs=/host/sys
+            - --path.rootfs=/host/root
+            - --no-collector.wifi
+            - --no-collector.hwmon
+            - --no-collector.timex
+            - --collector.filesystem.ignored-mount-points=^/(dev|proc|sys|var/lib/docker/.+)($|/)
+            - --collector.filesystem.ignored-fs-types=^(autofs|binfmt_misc|cgroup|configfs|debugfs|devpts|devtmpfs|fusectl|hugetlbfs|mqueue|overlay|proc|procfs|pstore|rpc_pipefs|securityfs|sysfs|tracefs)$
+          image: quay.io/prometheus/node-exporter:v0.18.1
+          imagePullPolicy: IfNotPresent
+          name: node-exporter
+          resources:
+            limits:
+              cpu: 250m
+              memory: 180Mi
+            requests:
+              cpu: 102m
+              memory: 180Mi
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+            - mountPath: /host/proc
+              name: proc
+            - mountPath: /host/sys
+              name: sys
+            - mountPath: /host/root
+              mountPropagation: HostToContainer
+              name: root
+              readOnly: true
+        - args:
+            - --logtostderr
+            - --secure-listen-address=[$(IP)]:9100
+            - --tls-cipher-suites=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_RSA_WITH_AES_128_CBC_SHA256,TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256,TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256
+            - --upstream=http://127.0.0.1:9100/
+          env:
+            - name: IP
+              valueFrom:
+                fieldRef:
+                  apiVersion: v1
+                  fieldPath: status.podIP
+          image: quay.io/coreos/kube-rbac-proxy:v0.4.1
+          imagePullPolicy: IfNotPresent
+          name: kube-rbac-proxy
+          ports:
+            - containerPort: 9100
+              hostPort: 9100
+              name: https
+              protocol: TCP
+          resources:
+            limits:
+              cpu: 20m
+              memory: 40Mi
+            requests:
+              cpu: 10m
+              memory: 20Mi
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
       dnsPolicy: ClusterFirst
       hostNetwork: true
       hostPID: true
@@ -157,22 +157,21 @@ spec:
       serviceAccountName: node-exporter
       terminationGracePeriodSeconds: 30
       tolerations:
-      - operator: Exists
+        - operator: Exists
       volumes:
-      - hostPath:
-          path: /proc
-          type: ""
-        name: proc
-      - hostPath:
-          path: /sys
-          type: ""
-        name: sys
-      - hostPath:
-          path: /
-          type: ""
-        name: root
+        - hostPath:
+            path: /proc
+            type: ""
+          name: proc
+        - hostPath:
+            path: /sys
+            type: ""
+          name: sys
+        - hostPath:
+            path: /
+            type: ""
+          name: root
   updateStrategy:
     rollingUpdate:
       maxUnavailable: 1
     type: RollingUpdate
-
