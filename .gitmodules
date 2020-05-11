@@ -1,3 +1,0 @@
-[submodule "03_monitoring/kube-prometheus"]
-	path = 03_monitoring/kube-prometheus
-	url = https://github.com/coreos/kube-prometheus.git
