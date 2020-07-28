@@ -198,7 +198,7 @@
                "steppedLine": false,
                "targets": [
                   {
-                     "expr": "sum(container_memory_working_set_bytes{cluster=\"$cluster\", namespace=\"$namespace\",container!=\"\"}) / sum(kube_pod_container_resource_requests_memory_bytes{namespace=\"$namespace\"})",
+                     "expr": "sum(container_memory_working_set_bytes{cluster=\"$cluster\", namespace=\"$namespace\",container!=\"\", image!=\"\"}) / sum(kube_pod_container_resource_requests_memory_bytes{namespace=\"$namespace\"})",
                      "format": "time_series",
                      "instant": true,
                      "intervalFactor": 2,
@@ -274,7 +274,7 @@
                "steppedLine": false,
                "targets": [
                   {
-                     "expr": "sum(container_memory_working_set_bytes{cluster=\"$cluster\", namespace=\"$namespace\",container!=\"\"}) / sum(kube_pod_container_resource_limits_memory_bytes{namespace=\"$namespace\"})",
+                     "expr": "sum(container_memory_working_set_bytes{cluster=\"$cluster\", namespace=\"$namespace\",container!=\"\", image!=\"\"}) / sum(kube_pod_container_resource_limits_memory_bytes{namespace=\"$namespace\"})",
                      "format": "time_series",
                      "instant": true,
                      "intervalFactor": 2,
@@ -736,7 +736,7 @@
                "steppedLine": false,
                "targets": [
                   {
-                     "expr": "sum(container_memory_working_set_bytes{cluster=\"$cluster\", namespace=\"$namespace\", container!=\"\"}) by (pod)",
+                     "expr": "sum(container_memory_working_set_bytes{cluster=\"$cluster\", namespace=\"$namespace\", container!=\"\", image!=\"\"}) by (pod)",
                      "format": "time_series",
                      "intervalFactor": 2,
                      "legendFormat": "{{pod}}",
@@ -985,7 +985,7 @@
                ],
                "targets": [
                   {
-                     "expr": "sum(container_memory_working_set_bytes{cluster=\"$cluster\", namespace=\"$namespace\",container!=\"\"}) by (pod)",
+                     "expr": "sum(container_memory_working_set_bytes{cluster=\"$cluster\", namespace=\"$namespace\",container!=\"\", image!=\"\"}) by (pod)",
                      "format": "table",
                      "instant": true,
                      "intervalFactor": 2,
@@ -1003,7 +1003,7 @@
                      "step": 10
                   },
                   {
-                     "expr": "sum(container_memory_working_set_bytes{cluster=\"$cluster\", namespace=\"$namespace\",container!=\"\"}) by (pod) / sum(kube_pod_container_resource_requests_memory_bytes{namespace=\"$namespace\"}) by (pod)",
+                     "expr": "sum(container_memory_working_set_bytes{cluster=\"$cluster\", namespace=\"$namespace\",container!=\"\", image!=\"\"}) by (pod) / sum(kube_pod_container_resource_requests_memory_bytes{namespace=\"$namespace\"}) by (pod)",
                      "format": "table",
                      "instant": true,
                      "intervalFactor": 2,
@@ -1021,7 +1021,7 @@
                      "step": 10
                   },
                   {
-                     "expr": "sum(container_memory_working_set_bytes{cluster=\"$cluster\", namespace=\"$namespace\",container!=\"\"}) by (pod) / sum(kube_pod_container_resource_limits_memory_bytes{namespace=\"$namespace\"}) by (pod)",
+                     "expr": "sum(container_memory_working_set_bytes{cluster=\"$cluster\", namespace=\"$namespace\",container!=\"\", image!=\"\"}) by (pod) / sum(kube_pod_container_resource_limits_memory_bytes{namespace=\"$namespace\"}) by (pod)",
                      "format": "table",
                      "instant": true,
                      "intervalFactor": 2,
@@ -1114,6 +1114,7 @@
                "datasource": "$datasource",
                "fill": 1,
                "id": 9,
+               "interval": "1m",
                "legend": {
                   "avg": false,
                   "current": false,
@@ -1981,7 +1982,7 @@
          "30d"
       ]
    },
-   "timezone": "",
+   "timezone": "UTC",
    "title": "Kubernetes / Compute Resources / Namespace (Pods)",
    "uid": "85a562078cdf77779eaa1add43ccec1e",
    "version": 0

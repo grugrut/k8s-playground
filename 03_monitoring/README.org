@@ -1,8 +1,20 @@
 * Monitoring
 
-- Install prometheus operator
+- Deploy promehteus and grafana
 #+begin_src bash
-kubectl apply -f manifests/setup
-kubectl apply -f manifests
-kubectl apply -f grafana.yaml
+kubectl create namespace monitoring
+kubectl -n monitoring create -f pv.yaml
+helm install prometheus stable/prometheus --namespace monitoring -f prometheus-variables.yaml
+helm install grafana stable/grafana --namespace monitoring -f grafana-variables.yaml
+#+end_src
+
+- Import dashboards
+#+begin_src bash
+sh -c 'find dashboards/ -name "*.json" -printf "%f\n" | xargs -t -IXXX -- kubectl -n monitoring create configmap dashboard-XXX --from-file=dashboards/XXX'
+sh -c 'find dashboards/ -name "*.json" -printf "%f\n" | xargs -t -IXXX -- kubectl -n monitoring label configmap dashboard-XXX grafana_dashboard=1'
+#+end_src
+
+- access to grafana
+#+begin_src bash
+kubectl get secret --namespace monitoring grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
 #+end_src
