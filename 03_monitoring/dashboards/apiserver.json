@@ -135,6 +135,7 @@
                   "min": false,
                   "rightSide": false,
                   "show": true,
+                  "sideWidth": null,
                   "total": false,
                   "values": false
                },
@@ -312,6 +313,7 @@
                   "min": false,
                   "rightSide": false,
                   "show": true,
+                  "sideWidth": null,
                   "total": false,
                   "values": false
                },
@@ -409,6 +411,7 @@
                   "min": false,
                   "rightSide": false,
                   "show": true,
+                  "sideWidth": null,
                   "total": false,
                   "values": false
                },
@@ -489,6 +492,7 @@
                   "min": false,
                   "rightSide": false,
                   "show": true,
+                  "sideWidth": null,
                   "total": false,
                   "values": false
                },
@@ -664,6 +668,7 @@
                   "min": false,
                   "rightSide": false,
                   "show": true,
+                  "sideWidth": null,
                   "total": false,
                   "values": false
                },
@@ -761,6 +766,7 @@
                   "min": false,
                   "rightSide": false,
                   "show": true,
+                  "sideWidth": null,
                   "total": false,
                   "values": false
                },
@@ -841,6 +847,7 @@
                   "min": false,
                   "rightSide": false,
                   "show": true,
+                  "sideWidth": null,
                   "total": false,
                   "values": false
                },
@@ -933,6 +940,7 @@
                   "min": false,
                   "rightSide": false,
                   "show": false,
+                  "sideWidth": null,
                   "total": false,
                   "values": false
                },
@@ -952,7 +960,7 @@
                "steppedLine": false,
                "targets": [
                   {
-                     "expr": "sum(rate(workqueue_adds_total{job=\"kube-apiserver\", instance=~\"$instance\", cluster=\"$cluster\"}[5m])) by (instance, name)",
+                     "expr": "sum(rate(workqueue_adds_total{job=\"kubernetes-apiservers\", instance=~\"$instance\", cluster=\"$cluster\"}[5m])) by (instance, name)",
                      "format": "time_series",
                      "intervalFactor": 2,
                      "legendFormat": "{{instance}} {{name}}",
@@ -1012,6 +1020,7 @@
                   "min": false,
                   "rightSide": false,
                   "show": false,
+                  "sideWidth": null,
                   "total": false,
                   "values": false
                },
@@ -1031,7 +1040,7 @@
                "steppedLine": false,
                "targets": [
                   {
-                     "expr": "sum(rate(workqueue_depth{job=\"kube-apiserver\", instance=~\"$instance\", cluster=\"$cluster\"}[5m])) by (instance, name)",
+                     "expr": "sum(rate(workqueue_depth{job=\"kubernetes-apiservers\", instance=~\"$instance\", cluster=\"$cluster\"}[5m])) by (instance, name)",
                      "format": "time_series",
                      "intervalFactor": 2,
                      "legendFormat": "{{instance}} {{name}}",
@@ -1091,6 +1100,7 @@
                   "min": false,
                   "rightSide": true,
                   "show": true,
+                  "sideWidth": null,
                   "total": false,
                   "values": true
                },
@@ -1110,7 +1120,7 @@
                "steppedLine": false,
                "targets": [
                   {
-                     "expr": "histogram_quantile(0.99, sum(rate(workqueue_queue_duration_seconds_bucket{job=\"kube-apiserver\", instance=~\"$instance\", cluster=\"$cluster\"}[5m])) by (instance, name, le))",
+                     "expr": "histogram_quantile(0.99, sum(rate(workqueue_queue_duration_seconds_bucket{job=\"kubernetes-apiservers\", instance=~\"$instance\", cluster=\"$cluster\"}[5m])) by (instance, name, le))",
                      "format": "time_series",
                      "intervalFactor": 2,
                      "legendFormat": "{{instance}} {{name}}",
@@ -1183,6 +1193,7 @@
                   "min": false,
                   "rightSide": false,
                   "show": true,
+                  "sideWidth": null,
                   "total": false,
                   "values": false
                },
@@ -1202,7 +1213,7 @@
                "steppedLine": false,
                "targets": [
                   {
-                     "expr": "process_resident_memory_bytes{job=\"kube-apiserver\",instance=~\"$instance\", cluster=\"$cluster\"}",
+                     "expr": "process_resident_memory_bytes{job=\"kubernetes-apiservers\",instance=~\"$instance\", cluster=\"$cluster\"}",
                      "format": "time_series",
                      "intervalFactor": 2,
                      "legendFormat": "{{instance}}",
@@ -1262,6 +1273,7 @@
                   "min": false,
                   "rightSide": false,
                   "show": true,
+                  "sideWidth": null,
                   "total": false,
                   "values": false
                },
@@ -1281,7 +1293,7 @@
                "steppedLine": false,
                "targets": [
                   {
-                     "expr": "rate(process_cpu_seconds_total{job=\"kube-apiserver\",instance=~\"$instance\", cluster=\"$cluster\"}[5m])",
+                     "expr": "rate(process_cpu_seconds_total{job=\"kubernetes-apiservers\",instance=~\"$instance\", cluster=\"$cluster\"}[5m])",
                      "format": "time_series",
                      "intervalFactor": 2,
                      "legendFormat": "{{instance}}",
@@ -1341,6 +1353,7 @@
                   "min": false,
                   "rightSide": false,
                   "show": true,
+                  "sideWidth": null,
                   "total": false,
                   "values": false
                },
@@ -1360,7 +1373,7 @@
                "steppedLine": false,
                "targets": [
                   {
-                     "expr": "go_goroutines{job=\"kube-apiserver\",instance=~\"$instance\", cluster=\"$cluster\"}",
+                     "expr": "go_goroutines{job=\"kubernetes-apiservers\",instance=~\"$instance\", cluster=\"$cluster\"}",
                      "format": "time_series",
                      "intervalFactor": 2,
                      "legendFormat": "{{instance}}",
@@ -1464,7 +1477,7 @@
             "multi": false,
             "name": "instance",
             "options": [ ],
-            "query": "label_values(apiserver_request_total{job=\"kube-apiserver\", cluster=\"$cluster\"}, instance)",
+            "query": "label_values(apiserver_request_total{job=\"kubernetes-apiservers\", cluster=\"$cluster\"}, instance)",
             "refresh": 2,
             "regex": "",
             "sort": 1,

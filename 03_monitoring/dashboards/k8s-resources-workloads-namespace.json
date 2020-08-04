@@ -182,6 +182,7 @@
                      "dateFormat": "YYYY-MM-DD HH:mm:ss",
                      "decimals": 0,
                      "link": false,
+                     "linkTargetBlank": false,
                      "linkTooltip": "Drill down",
                      "linkUrl": "",
                      "pattern": "Value #A",
@@ -196,6 +197,7 @@
                      "dateFormat": "YYYY-MM-DD HH:mm:ss",
                      "decimals": 2,
                      "link": false,
+                     "linkTargetBlank": false,
                      "linkTooltip": "Drill down",
                      "linkUrl": "",
                      "pattern": "Value #B",
@@ -210,6 +212,7 @@
                      "dateFormat": "YYYY-MM-DD HH:mm:ss",
                      "decimals": 2,
                      "link": false,
+                     "linkTargetBlank": false,
                      "linkTooltip": "Drill down",
                      "linkUrl": "",
                      "pattern": "Value #C",
@@ -224,6 +227,7 @@
                      "dateFormat": "YYYY-MM-DD HH:mm:ss",
                      "decimals": 2,
                      "link": false,
+                     "linkTargetBlank": false,
                      "linkTooltip": "Drill down",
                      "linkUrl": "",
                      "pattern": "Value #D",
@@ -238,6 +242,7 @@
                      "dateFormat": "YYYY-MM-DD HH:mm:ss",
                      "decimals": 2,
                      "link": false,
+                     "linkTargetBlank": false,
                      "linkTooltip": "Drill down",
                      "linkUrl": "",
                      "pattern": "Value #E",
@@ -252,6 +257,7 @@
                      "dateFormat": "YYYY-MM-DD HH:mm:ss",
                      "decimals": 2,
                      "link": false,
+                     "linkTargetBlank": false,
                      "linkTooltip": "Drill down",
                      "linkUrl": "",
                      "pattern": "Value #F",
@@ -266,6 +272,7 @@
                      "dateFormat": "YYYY-MM-DD HH:mm:ss",
                      "decimals": 2,
                      "link": true,
+                     "linkTargetBlank": false,
                      "linkTooltip": "Drill down",
                      "linkUrl": "./d/a164a7f0339f99e89cea5cb47e9be617/k8s-resources-workload?var-datasource=$datasource&var-cluster=$cluster&var-namespace=$namespace&var-workload=$__cell&var-type=$__cell_2",
                      "pattern": "workload",
@@ -280,6 +287,7 @@
                      "dateFormat": "YYYY-MM-DD HH:mm:ss",
                      "decimals": 2,
                      "link": false,
+                     "linkTargetBlank": false,
                      "linkTooltip": "Drill down",
                      "linkUrl": "",
                      "pattern": "workload_type",
@@ -573,6 +581,7 @@
                      "dateFormat": "YYYY-MM-DD HH:mm:ss",
                      "decimals": 0,
                      "link": false,
+                     "linkTargetBlank": false,
                      "linkTooltip": "Drill down",
                      "linkUrl": "",
                      "pattern": "Value #A",
@@ -587,6 +596,7 @@
                      "dateFormat": "YYYY-MM-DD HH:mm:ss",
                      "decimals": 2,
                      "link": false,
+                     "linkTargetBlank": false,
                      "linkTooltip": "Drill down",
                      "linkUrl": "",
                      "pattern": "Value #B",
@@ -601,6 +611,7 @@
                      "dateFormat": "YYYY-MM-DD HH:mm:ss",
                      "decimals": 2,
                      "link": false,
+                     "linkTargetBlank": false,
                      "linkTooltip": "Drill down",
                      "linkUrl": "",
                      "pattern": "Value #C",
@@ -615,6 +626,7 @@
                      "dateFormat": "YYYY-MM-DD HH:mm:ss",
                      "decimals": 2,
                      "link": false,
+                     "linkTargetBlank": false,
                      "linkTooltip": "Drill down",
                      "linkUrl": "",
                      "pattern": "Value #D",
@@ -629,6 +641,7 @@
                      "dateFormat": "YYYY-MM-DD HH:mm:ss",
                      "decimals": 2,
                      "link": false,
+                     "linkTargetBlank": false,
                      "linkTooltip": "Drill down",
                      "linkUrl": "",
                      "pattern": "Value #E",
@@ -643,6 +656,7 @@
                      "dateFormat": "YYYY-MM-DD HH:mm:ss",
                      "decimals": 2,
                      "link": false,
+                     "linkTargetBlank": false,
                      "linkTooltip": "Drill down",
                      "linkUrl": "",
                      "pattern": "Value #F",
@@ -657,6 +671,7 @@
                      "dateFormat": "YYYY-MM-DD HH:mm:ss",
                      "decimals": 2,
                      "link": true,
+                     "linkTargetBlank": false,
                      "linkTooltip": "Drill down",
                      "linkUrl": "./d/a164a7f0339f99e89cea5cb47e9be617/k8s-resources-workload?var-datasource=$datasource&var-cluster=$cluster&var-namespace=$namespace&var-workload=$__cell&var-type=$__cell_2",
                      "pattern": "workload",
@@ -671,6 +686,7 @@
                      "dateFormat": "YYYY-MM-DD HH:mm:ss",
                      "decimals": 2,
                      "link": false,
+                     "linkTargetBlank": false,
                      "linkTooltip": "Drill down",
                      "linkUrl": "",
                      "pattern": "workload_type",
@@ -840,6 +856,7 @@
                      "dateFormat": "YYYY-MM-DD HH:mm:ss",
                      "decimals": 2,
                      "link": false,
+                     "linkTargetBlank": false,
                      "linkTooltip": "Drill down",
                      "linkUrl": "",
                      "pattern": "Value #A",
@@ -854,6 +871,7 @@
                      "dateFormat": "YYYY-MM-DD HH:mm:ss",
                      "decimals": 2,
                      "link": false,
+                     "linkTargetBlank": false,
                      "linkTooltip": "Drill down",
                      "linkUrl": "",
                      "pattern": "Value #B",
@@ -868,6 +886,7 @@
                      "dateFormat": "YYYY-MM-DD HH:mm:ss",
                      "decimals": 2,
                      "link": false,
+                     "linkTargetBlank": false,
                      "linkTooltip": "Drill down",
                      "linkUrl": "",
                      "pattern": "Value #C",
@@ -882,6 +901,7 @@
                      "dateFormat": "YYYY-MM-DD HH:mm:ss",
                      "decimals": 2,
                      "link": false,
+                     "linkTargetBlank": false,
                      "linkTooltip": "Drill down",
                      "linkUrl": "",
                      "pattern": "Value #D",
@@ -896,6 +916,7 @@
                      "dateFormat": "YYYY-MM-DD HH:mm:ss",
                      "decimals": 2,
                      "link": false,
+                     "linkTargetBlank": false,
                      "linkTooltip": "Drill down",
                      "linkUrl": "",
                      "pattern": "Value #E",
@@ -910,6 +931,7 @@
                      "dateFormat": "YYYY-MM-DD HH:mm:ss",
                      "decimals": 2,
                      "link": false,
+                     "linkTargetBlank": false,
                      "linkTooltip": "Drill down",
                      "linkUrl": "",
                      "pattern": "Value #F",
@@ -924,6 +946,7 @@
                      "dateFormat": "YYYY-MM-DD HH:mm:ss",
                      "decimals": 2,
                      "link": true,
+                     "linkTargetBlank": false,
                      "linkTooltip": "Drill down to pods",
                      "linkUrl": "./d/a164a7f0339f99e89cea5cb47e9be617/k8s-resources-workload?var-datasource=$datasource&var-cluster=$cluster&var-namespace=$namespace&var-workload=$__cell&var-type=$type",
                      "pattern": "workload",
@@ -938,6 +961,7 @@
                      "dateFormat": "YYYY-MM-DD HH:mm:ss",
                      "decimals": 2,
                      "link": false,
+                     "linkTargetBlank": false,
                      "linkTooltip": "Drill down",
                      "linkUrl": "",
                      "pattern": "workload_type",
@@ -959,7 +983,7 @@
                ],
                "targets": [
                   {
-                     "expr": "(sum(irate(container_network_receive_bytes_total{cluster=\"$cluster\", namespace=~\"$namespace\"}[$__interval])\n* on (namespace,pod)\ngroup_left(workload,workload_type) namespace_workload_pod:kube_pod_owner:relabel{cluster=\"$cluster\", namespace=~\"$namespace\", workload_type=\"$type\"}) by (workload))\n",
+                     "expr": "(sum(irate(container_network_receive_bytes_total{cluster=\"$cluster\", namespace=~\"$namespace\"}[$__range])\n* on (namespace,pod)\ngroup_left(workload,workload_type) namespace_workload_pod:kube_pod_owner:relabel{cluster=\"$cluster\", namespace=~\"$namespace\", workload_type=\"$type\"}) by (workload))\n",
                      "format": "table",
                      "instant": true,
                      "intervalFactor": 2,
@@ -968,7 +992,7 @@
                      "step": 10
                   },
                   {
-                     "expr": "(sum(irate(container_network_transmit_bytes_total{cluster=\"$cluster\", namespace=~\"$namespace\"}[$__interval])\n* on (namespace,pod)\ngroup_left(workload,workload_type) namespace_workload_pod:kube_pod_owner:relabel{cluster=\"$cluster\", namespace=~\"$namespace\", workload_type=\"$type\"}) by (workload))\n",
+                     "expr": "(sum(irate(container_network_transmit_bytes_total{cluster=\"$cluster\", namespace=~\"$namespace\"}[$__range])\n* on (namespace,pod)\ngroup_left(workload,workload_type) namespace_workload_pod:kube_pod_owner:relabel{cluster=\"$cluster\", namespace=~\"$namespace\", workload_type=\"$type\"}) by (workload))\n",
                      "format": "table",
                      "instant": true,
                      "intervalFactor": 2,
@@ -977,7 +1001,7 @@
                      "step": 10
                   },
                   {
-                     "expr": "(sum(irate(container_network_receive_packets_total{cluster=\"$cluster\", namespace=~\"$namespace\"}[$__interval])\n* on (namespace,pod)\ngroup_left(workload,workload_type) namespace_workload_pod:kube_pod_owner:relabel{cluster=\"$cluster\", namespace=~\"$namespace\", workload_type=\"$type\"}) by (workload))\n",
+                     "expr": "(sum(irate(container_network_receive_packets_total{cluster=\"$cluster\", namespace=~\"$namespace\"}[$__range])\n* on (namespace,pod)\ngroup_left(workload,workload_type) namespace_workload_pod:kube_pod_owner:relabel{cluster=\"$cluster\", namespace=~\"$namespace\", workload_type=\"$type\"}) by (workload))\n",
                      "format": "table",
                      "instant": true,
                      "intervalFactor": 2,
@@ -986,7 +1010,7 @@
                      "step": 10
                   },
                   {
-                     "expr": "(sum(irate(container_network_transmit_packets_total{cluster=\"$cluster\", namespace=~\"$namespace\"}[$__interval])\n* on (namespace,pod)\ngroup_left(workload,workload_type) namespace_workload_pod:kube_pod_owner:relabel{cluster=\"$cluster\", namespace=~\"$namespace\", workload_type=\"$type\"}) by (workload))\n",
+                     "expr": "(sum(irate(container_network_transmit_packets_total{cluster=\"$cluster\", namespace=~\"$namespace\"}[$__range])\n* on (namespace,pod)\ngroup_left(workload,workload_type) namespace_workload_pod:kube_pod_owner:relabel{cluster=\"$cluster\", namespace=~\"$namespace\", workload_type=\"$type\"}) by (workload))\n",
                      "format": "table",
                      "instant": true,
                      "intervalFactor": 2,
@@ -995,7 +1019,7 @@
                      "step": 10
                   },
                   {
-                     "expr": "(sum(irate(container_network_receive_packets_dropped_total{cluster=\"$cluster\", namespace=~\"$namespace\"}[$__interval])\n* on (namespace,pod)\ngroup_left(workload,workload_type) namespace_workload_pod:kube_pod_owner:relabel{cluster=\"$cluster\", namespace=~\"$namespace\", workload_type=\"$type\"}) by (workload))\n",
+                     "expr": "(sum(irate(container_network_receive_packets_dropped_total{cluster=\"$cluster\", namespace=~\"$namespace\"}[$__range])\n* on (namespace,pod)\ngroup_left(workload,workload_type) namespace_workload_pod:kube_pod_owner:relabel{cluster=\"$cluster\", namespace=~\"$namespace\", workload_type=\"$type\"}) by (workload))\n",
                      "format": "table",
                      "instant": true,
                      "intervalFactor": 2,
@@ -1004,7 +1028,7 @@
                      "step": 10
                   },
                   {
-                     "expr": "(sum(irate(container_network_transmit_packets_dropped_total{cluster=\"$cluster\", namespace=~\"$namespace\"}[$__interval])\n* on (namespace,pod)\ngroup_left(workload,workload_type) namespace_workload_pod:kube_pod_owner:relabel{cluster=\"$cluster\", namespace=~\"$namespace\", workload_type=\"$type\"}) by (workload))\n",
+                     "expr": "(sum(irate(container_network_transmit_packets_dropped_total{cluster=\"$cluster\", namespace=~\"$namespace\"}[$__range])\n* on (namespace,pod)\ngroup_left(workload,workload_type) namespace_workload_pod:kube_pod_owner:relabel{cluster=\"$cluster\", namespace=~\"$namespace\", workload_type=\"$type\"}) by (workload))\n",
                      "format": "table",
                      "instant": true,
                      "intervalFactor": 2,
@@ -1094,7 +1118,7 @@
                "steppedLine": false,
                "targets": [
                   {
-                     "expr": "(sum(irate(container_network_receive_bytes_total{cluster=\"$cluster\", namespace=~\"$namespace\"}[$__interval])\n* on (namespace,pod)\ngroup_left(workload,workload_type) namespace_workload_pod:kube_pod_owner:relabel{cluster=\"$cluster\", namespace=~\"$namespace\", workload=~\".+\", workload_type=\"$type\"}) by (workload))\n",
+                     "expr": "(sum(irate(container_network_receive_bytes_total{cluster=\"$cluster\", namespace=~\"$namespace\"}[$__range])\n* on (namespace,pod)\ngroup_left(workload,workload_type) namespace_workload_pod:kube_pod_owner:relabel{cluster=\"$cluster\", namespace=~\"$namespace\", workload=~\".+\", workload_type=\"$type\"}) by (workload))\n",
                      "format": "time_series",
                      "intervalFactor": 2,
                      "legendFormat": "{{workload}}",
@@ -1182,7 +1206,7 @@
                "steppedLine": false,
                "targets": [
                   {
-                     "expr": "(sum(irate(container_network_transmit_bytes_total{cluster=\"$cluster\", namespace=~\"$namespace\"}[$__interval])\n* on (namespace,pod)\ngroup_left(workload,workload_type) namespace_workload_pod:kube_pod_owner:relabel{cluster=\"$cluster\", namespace=~\"$namespace\", workload=~\".+\", workload_type=\"$type\"}) by (workload))\n",
+                     "expr": "(sum(irate(container_network_transmit_bytes_total{cluster=\"$cluster\", namespace=~\"$namespace\"}[$__range])\n* on (namespace,pod)\ngroup_left(workload,workload_type) namespace_workload_pod:kube_pod_owner:relabel{cluster=\"$cluster\", namespace=~\"$namespace\", workload=~\".+\", workload_type=\"$type\"}) by (workload))\n",
                      "format": "time_series",
                      "intervalFactor": 2,
                      "legendFormat": "{{workload}}",
@@ -1270,7 +1294,7 @@
                "steppedLine": false,
                "targets": [
                   {
-                     "expr": "(avg(irate(container_network_receive_bytes_total{cluster=\"$cluster\", namespace=~\"$namespace\"}[$__interval])\n* on (namespace,pod)\ngroup_left(workload,workload_type) namespace_workload_pod:kube_pod_owner:relabel{cluster=\"$cluster\", namespace=~\"$namespace\", workload=~\".+\", workload_type=\"$type\"}) by (workload))\n",
+                     "expr": "(avg(irate(container_network_receive_bytes_total{cluster=\"$cluster\", namespace=~\"$namespace\"}[$__range])\n* on (namespace,pod)\ngroup_left(workload,workload_type) namespace_workload_pod:kube_pod_owner:relabel{cluster=\"$cluster\", namespace=~\"$namespace\", workload=~\".+\", workload_type=\"$type\"}) by (workload))\n",
                      "format": "time_series",
                      "intervalFactor": 2,
                      "legendFormat": "{{workload}}",
@@ -1358,7 +1382,7 @@
                "steppedLine": false,
                "targets": [
                   {
-                     "expr": "(avg(irate(container_network_transmit_bytes_total{cluster=\"$cluster\", namespace=~\"$namespace\"}[$__interval])\n* on (namespace,pod)\ngroup_left(workload,workload_type) namespace_workload_pod:kube_pod_owner:relabel{cluster=\"$cluster\", namespace=~\"$namespace\", workload=~\".+\", workload_type=\"$type\"}) by (workload))\n",
+                     "expr": "(avg(irate(container_network_transmit_bytes_total{cluster=\"$cluster\", namespace=~\"$namespace\"}[$__range])\n* on (namespace,pod)\ngroup_left(workload,workload_type) namespace_workload_pod:kube_pod_owner:relabel{cluster=\"$cluster\", namespace=~\"$namespace\", workload=~\".+\", workload_type=\"$type\"}) by (workload))\n",
                      "format": "time_series",
                      "intervalFactor": 2,
                      "legendFormat": "{{workload}}",
@@ -1446,7 +1470,7 @@
                "steppedLine": false,
                "targets": [
                   {
-                     "expr": "(sum(irate(container_network_receive_packets_total{cluster=\"$cluster\", namespace=~\"$namespace\"}[$__interval])\n* on (namespace,pod)\ngroup_left(workload,workload_type) namespace_workload_pod:kube_pod_owner:relabel{cluster=\"$cluster\", namespace=~\"$namespace\", workload=~\".+\", workload_type=\"$type\"}) by (workload))\n",
+                     "expr": "(sum(irate(container_network_receive_packets_total{cluster=\"$cluster\", namespace=~\"$namespace\"}[$__range])\n* on (namespace,pod)\ngroup_left(workload,workload_type) namespace_workload_pod:kube_pod_owner:relabel{cluster=\"$cluster\", namespace=~\"$namespace\", workload=~\".+\", workload_type=\"$type\"}) by (workload))\n",
                      "format": "time_series",
                      "intervalFactor": 2,
                      "legendFormat": "{{workload}}",
@@ -1534,7 +1558,7 @@
                "steppedLine": false,
                "targets": [
                   {
-                     "expr": "(sum(irate(container_network_transmit_packets_total{cluster=\"$cluster\", namespace=~\"$namespace\"}[$__interval])\n* on (namespace,pod)\ngroup_left(workload,workload_type) namespace_workload_pod:kube_pod_owner:relabel{cluster=\"$cluster\", namespace=~\"$namespace\", workload=~\".+\", workload_type=\"$type\"}) by (workload))\n",
+                     "expr": "(sum(irate(container_network_transmit_packets_total{cluster=\"$cluster\", namespace=~\"$namespace\"}[$__range])\n* on (namespace,pod)\ngroup_left(workload,workload_type) namespace_workload_pod:kube_pod_owner:relabel{cluster=\"$cluster\", namespace=~\"$namespace\", workload=~\".+\", workload_type=\"$type\"}) by (workload))\n",
                      "format": "time_series",
                      "intervalFactor": 2,
                      "legendFormat": "{{workload}}",
@@ -1622,7 +1646,7 @@
                "steppedLine": false,
                "targets": [
                   {
-                     "expr": "(sum(irate(container_network_receive_packets_dropped_total{cluster=\"$cluster\", namespace=~\"$namespace\"}[$__interval])\n* on (namespace,pod)\ngroup_left(workload,workload_type) namespace_workload_pod:kube_pod_owner:relabel{cluster=\"$cluster\", namespace=~\"$namespace\", workload=~\".+\", workload_type=\"$type\"}) by (workload))\n",
+                     "expr": "(sum(irate(container_network_receive_packets_dropped_total{cluster=\"$cluster\", namespace=~\"$namespace\"}[$__range])\n* on (namespace,pod)\ngroup_left(workload,workload_type) namespace_workload_pod:kube_pod_owner:relabel{cluster=\"$cluster\", namespace=~\"$namespace\", workload=~\".+\", workload_type=\"$type\"}) by (workload))\n",
                      "format": "time_series",
                      "intervalFactor": 2,
                      "legendFormat": "{{workload}}",
@@ -1710,7 +1734,7 @@
                "steppedLine": false,
                "targets": [
                   {
-                     "expr": "(sum(irate(container_network_transmit_packets_dropped_total{cluster=\"$cluster\", namespace=~\"$namespace\"}[$__interval])\n* on (namespace,pod)\ngroup_left(workload,workload_type) namespace_workload_pod:kube_pod_owner:relabel{cluster=\"$cluster\", namespace=~\"$namespace\", workload=~\".+\", workload_type=\"$type\"}) by (workload))\n",
+                     "expr": "(sum(irate(container_network_transmit_packets_dropped_total{cluster=\"$cluster\", namespace=~\"$namespace\"}[$__range])\n* on (namespace,pod)\ngroup_left(workload,workload_type) namespace_workload_pod:kube_pod_owner:relabel{cluster=\"$cluster\", namespace=~\"$namespace\", workload=~\".+\", workload_type=\"$type\"}) by (workload))\n",
                      "format": "time_series",
                      "intervalFactor": 2,
                      "legendFormat": "{{workload}}",

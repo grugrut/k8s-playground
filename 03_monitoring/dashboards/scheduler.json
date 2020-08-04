@@ -73,7 +73,7 @@
                "tableColumn": "",
                "targets": [
                   {
-                     "expr": "sum(up{job=\"kube-scheduler\"})",
+                     "expr": "sum(up{job=\"kubernetes-pods\",component=\"kube-scheduler\"})",
                      "format": "time_series",
                      "intervalFactor": 2,
                      "legendFormat": "",
@@ -113,6 +113,7 @@
                   "min": false,
                   "rightSide": true,
                   "show": true,
+                  "sideWidth": null,
                   "total": false,
                   "values": true
                },
@@ -132,28 +133,28 @@
                "steppedLine": false,
                "targets": [
                   {
-                     "expr": "sum(rate(scheduler_e2e_scheduling_duration_seconds_count{job=\"kube-scheduler\", instance=~\"$instance\"}[5m])) by (instance)",
+                     "expr": "sum(rate(scheduler_e2e_scheduling_duration_seconds_count{job=\"kubernetes-pods\",component=\"kube-scheduler\", instance=~\"$instance\"}[5m])) by (instance)",
                      "format": "time_series",
                      "intervalFactor": 2,
                      "legendFormat": "{{instance}} e2e",
                      "refId": "A"
                   },
                   {
-                     "expr": "sum(rate(scheduler_binding_duration_seconds_count{job=\"kube-scheduler\", instance=~\"$instance\"}[5m])) by (instance)",
+                     "expr": "sum(rate(scheduler_binding_duration_seconds_count{job=\"kubernetes-pods\",component=\"kube-scheduler\", instance=~\"$instance\"}[5m])) by (instance)",
                      "format": "time_series",
                      "intervalFactor": 2,
                      "legendFormat": "{{instance}} binding",
                      "refId": "B"
                   },
                   {
-                     "expr": "sum(rate(scheduler_scheduling_algorithm_duration_seconds_count{job=\"kube-scheduler\", instance=~\"$instance\"}[5m])) by (instance)",
+                     "expr": "sum(rate(scheduler_scheduling_algorithm_duration_seconds_count{job=\"kubernetes-pods\",component=\"kube-scheduler\", instance=~\"$instance\"}[5m])) by (instance)",
                      "format": "time_series",
                      "intervalFactor": 2,
                      "legendFormat": "{{instance}} scheduling algorithm",
                      "refId": "C"
                   },
                   {
-                     "expr": "sum(rate(scheduler_volume_scheduling_duration_seconds_count{job=\"kube-scheduler\", instance=~\"$instance\"}[5m])) by (instance)",
+                     "expr": "sum(rate(scheduler_volume_scheduling_duration_seconds_count{job=\"kubernetes-pods\",component=\"kube-scheduler\", instance=~\"$instance\"}[5m])) by (instance)",
                      "format": "time_series",
                      "intervalFactor": 2,
                      "legendFormat": "{{instance}} volume",
@@ -213,6 +214,7 @@
                   "min": false,
                   "rightSide": true,
                   "show": true,
+                  "sideWidth": null,
                   "total": false,
                   "values": true
                },
@@ -232,28 +234,28 @@
                "steppedLine": false,
                "targets": [
                   {
-                     "expr": "histogram_quantile(0.99, sum(rate(scheduler_e2e_scheduling_duration_seconds_bucket{job=\"kube-scheduler\",instance=~\"$instance\"}[5m])) by (instance, le))",
+                     "expr": "histogram_quantile(0.99, sum(rate(scheduler_e2e_scheduling_duration_seconds_bucket{job=\"kubernetes-pods\",component=\"kube-scheduler\",instance=~\"$instance\"}[5m])) by (instance, le))",
                      "format": "time_series",
                      "intervalFactor": 2,
                      "legendFormat": "{{instance}} e2e",
                      "refId": "A"
                   },
                   {
-                     "expr": "histogram_quantile(0.99, sum(rate(scheduler_binding_duration_seconds_bucket{job=\"kube-scheduler\",instance=~\"$instance\"}[5m])) by (instance, le))",
+                     "expr": "histogram_quantile(0.99, sum(rate(scheduler_binding_duration_seconds_bucket{job=\"kubernetes-pods\",component=\"kube-scheduler\",instance=~\"$instance\"}[5m])) by (instance, le))",
                      "format": "time_series",
                      "intervalFactor": 2,
                      "legendFormat": "{{instance}} binding",
                      "refId": "B"
                   },
                   {
-                     "expr": "histogram_quantile(0.99, sum(rate(scheduler_scheduling_algorithm_duration_seconds_bucket{job=\"kube-scheduler\",instance=~\"$instance\"}[5m])) by (instance, le))",
+                     "expr": "histogram_quantile(0.99, sum(rate(scheduler_scheduling_algorithm_duration_seconds_bucket{job=\"kubernetes-pods\",component=\"kube-scheduler\",instance=~\"$instance\"}[5m])) by (instance, le))",
                      "format": "time_series",
                      "intervalFactor": 2,
                      "legendFormat": "{{instance}} scheduling algorithm",
                      "refId": "C"
                   },
                   {
-                     "expr": "histogram_quantile(0.99, sum(rate(scheduler_volume_scheduling_duration_seconds_bucket{job=\"kube-scheduler\",instance=~\"$instance\"}[5m])) by (instance, le))",
+                     "expr": "histogram_quantile(0.99, sum(rate(scheduler_volume_scheduling_duration_seconds_bucket{job=\"kubernetes-pods\",component=\"kube-scheduler\",instance=~\"$instance\"}[5m])) by (instance, le))",
                      "format": "time_series",
                      "intervalFactor": 2,
                      "legendFormat": "{{instance}} volume",
@@ -326,6 +328,7 @@
                   "min": false,
                   "rightSide": false,
                   "show": true,
+                  "sideWidth": null,
                   "total": false,
                   "values": false
                },
@@ -345,28 +348,28 @@
                "steppedLine": false,
                "targets": [
                   {
-                     "expr": "sum(rate(rest_client_requests_total{job=\"kube-scheduler\", instance=~\"$instance\",code=~\"2..\"}[5m]))",
+                     "expr": "sum(rate(rest_client_requests_total{job=\"kubernetes-pods\",component=\"kube-scheduler\", instance=~\"$instance\",code=~\"2..\"}[5m]))",
                      "format": "time_series",
                      "intervalFactor": 2,
                      "legendFormat": "2xx",
                      "refId": "A"
                   },
                   {
-                     "expr": "sum(rate(rest_client_requests_total{job=\"kube-scheduler\", instance=~\"$instance\",code=~\"3..\"}[5m]))",
+                     "expr": "sum(rate(rest_client_requests_total{job=\"kubernetes-pods\",component=\"kube-scheduler\", instance=~\"$instance\",code=~\"3..\"}[5m]))",
                      "format": "time_series",
                      "intervalFactor": 2,
                      "legendFormat": "3xx",
                      "refId": "B"
                   },
                   {
-                     "expr": "sum(rate(rest_client_requests_total{job=\"kube-scheduler\", instance=~\"$instance\",code=~\"4..\"}[5m]))",
+                     "expr": "sum(rate(rest_client_requests_total{job=\"kubernetes-pods\",component=\"kube-scheduler\", instance=~\"$instance\",code=~\"4..\"}[5m]))",
                      "format": "time_series",
                      "intervalFactor": 2,
                      "legendFormat": "4xx",
                      "refId": "C"
                   },
                   {
-                     "expr": "sum(rate(rest_client_requests_total{job=\"kube-scheduler\", instance=~\"$instance\",code=~\"5..\"}[5m]))",
+                     "expr": "sum(rate(rest_client_requests_total{job=\"kubernetes-pods\",component=\"kube-scheduler\", instance=~\"$instance\",code=~\"5..\"}[5m]))",
                      "format": "time_series",
                      "intervalFactor": 2,
                      "legendFormat": "5xx",
@@ -426,6 +429,7 @@
                   "min": false,
                   "rightSide": false,
                   "show": true,
+                  "sideWidth": null,
                   "total": false,
                   "values": false
                },
@@ -445,7 +449,7 @@
                "steppedLine": false,
                "targets": [
                   {
-                     "expr": "histogram_quantile(0.99, sum(rate(rest_client_request_duration_seconds_bucket{job=\"kube-scheduler\", instance=~\"$instance\", verb=\"POST\"}[5m])) by (verb, url, le))",
+                     "expr": "histogram_quantile(0.99, sum(rate(rest_client_request_duration_seconds_bucket{job=\"kubernetes-pods\",component=\"kube-scheduler\", instance=~\"$instance\", verb=\"POST\"}[5m])) by (verb, url, le))",
                      "format": "time_series",
                      "intervalFactor": 2,
                      "legendFormat": "{{verb}} {{url}}",
@@ -518,6 +522,7 @@
                   "min": false,
                   "rightSide": true,
                   "show": true,
+                  "sideWidth": null,
                   "total": false,
                   "values": true
                },
@@ -537,7 +542,7 @@
                "steppedLine": false,
                "targets": [
                   {
-                     "expr": "histogram_quantile(0.99, sum(rate(rest_client_request_duration_seconds_bucket{job=\"kube-scheduler\", instance=~\"$instance\", verb=\"GET\"}[5m])) by (verb, url, le))",
+                     "expr": "histogram_quantile(0.99, sum(rate(rest_client_request_duration_seconds_bucket{job=\"kubernetes-pods\",component=\"kube-scheduler\", instance=~\"$instance\", verb=\"GET\"}[5m])) by (verb, url, le))",
                      "format": "time_series",
                      "intervalFactor": 2,
                      "legendFormat": "{{verb}} {{url}}",
@@ -610,6 +615,7 @@
                   "min": false,
                   "rightSide": false,
                   "show": true,
+                  "sideWidth": null,
                   "total": false,
                   "values": false
                },
@@ -629,7 +635,7 @@
                "steppedLine": false,
                "targets": [
                   {
-                     "expr": "process_resident_memory_bytes{job=\"kube-scheduler\", instance=~\"$instance\"}",
+                     "expr": "process_resident_memory_bytes{job=\"kubernetes-pods\",component=\"kube-scheduler\", instance=~\"$instance\"}",
                      "format": "time_series",
                      "intervalFactor": 2,
                      "legendFormat": "{{instance}}",
@@ -689,6 +695,7 @@
                   "min": false,
                   "rightSide": false,
                   "show": true,
+                  "sideWidth": null,
                   "total": false,
                   "values": false
                },
@@ -708,7 +715,7 @@
                "steppedLine": false,
                "targets": [
                   {
-                     "expr": "rate(process_cpu_seconds_total{job=\"kube-scheduler\", instance=~\"$instance\"}[5m])",
+                     "expr": "rate(process_cpu_seconds_total{job=\"kubernetes-pods\",component=\"kube-scheduler\", instance=~\"$instance\"}[5m])",
                      "format": "time_series",
                      "intervalFactor": 2,
                      "legendFormat": "{{instance}}",
@@ -768,6 +775,7 @@
                   "min": false,
                   "rightSide": false,
                   "show": true,
+                  "sideWidth": null,
                   "total": false,
                   "values": false
                },
@@ -787,7 +795,7 @@
                "steppedLine": false,
                "targets": [
                   {
-                     "expr": "go_goroutines{job=\"kube-scheduler\",instance=~\"$instance\"}",
+                     "expr": "go_goroutines{job=\"kubernetes-pods\",component=\"kube-scheduler\",instance=~\"$instance\"}",
                      "format": "time_series",
                      "intervalFactor": 2,
                      "legendFormat": "{{instance}}",
@@ -871,7 +879,7 @@
             "multi": false,
             "name": "instance",
             "options": [ ],
-            "query": "label_values(process_cpu_seconds_total{job=\"kube-scheduler\"}, instance)",
+            "query": "label_values(process_cpu_seconds_total{job=\"kubernetes-pods\",component=\"kube-scheduler\"}, instance)",
             "refresh": 2,
             "regex": "",
             "sort": 1,

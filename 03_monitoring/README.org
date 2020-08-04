@@ -1,16 +1,25 @@
 * Monitoring
 
+yq '.dummy.serverFiles."alerting_rules.yml".groups = .groups | .dummy' prometheus_alerts.yaml -y > prometheus_alerts-variables.yaml
+
+
 - Deploy promehteus and grafana
 #+begin_src bash
 kubectl create namespace monitoring
 kubectl -n monitoring create -f pv.yaml
-helm install prometheus stable/prometheus --namespace monitoring -f prometheus-variables.yaml
+helm install prometheus stable/prometheus --namespace monitoring -f prometheus-variables.yaml -f prometheus_rules-variables.yaml -f prometheus_alerts-variables.yaml
 helm install grafana stable/grafana --namespace monitoring -f grafana-variables.yaml
 #+end_src
 
 - Import dashboards
 #+begin_src bash
 sh -c 'find dashboards/ -name "*.json" -printf "%f\n" | xargs -t -IXXX -- kubectl -n monitoring create configmap dashboard-XXX --from-file=dashboards/XXX'
+sh -c 'find dashboards/ -name "*.json" -printf "%f\n" | xargs -t -IXXX -- kubectl -n monitoring label configmap dashboard-XXX grafana_dashboard=1'
+#+end_src
+
+- To replace
+#+begin_src bash
+sh -c 'find dashboards/ -name "*.json" -printf "%f\n" | xargs -t -IXXX -- sh -c "kubectl -n monitoring create configmap dashboard-XXX --from-file=dashboards/XXX --dry-run=client -o yaml | kubectl replace -f -"'
 sh -c 'find dashboards/ -name "*.json" -printf "%f\n" | xargs -t -IXXX -- kubectl -n monitoring label configmap dashboard-XXX grafana_dashboard=1'
 #+end_src
 
